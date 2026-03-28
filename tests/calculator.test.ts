@@ -46,6 +46,20 @@ describe("calculator utilities", () => {
     expect(recommendation.savingsMonthly).toBe(293);
   });
 
+  it("recomputes the plan from edited totals when overrides are applied", () => {
+    const estimate = buildEstimateResult(moderateSelections, {
+      answering: 10,
+      scheduling: 5,
+      messaging: 5,
+      crm_ops: 5,
+      website: 5
+    });
+    const recommendation = recommendPlan(estimate, scoreComplexity(moderateSelections));
+
+    expect(estimate.totals.monthly).toBe(30);
+    expect(recommendation.plan.key).toBe("professional");
+  });
+
   it("builds comparison rows for each category", () => {
     const estimate = buildEstimateResult(moderateSelections);
     const recommendation = recommendPlan(estimate, scoreComplexity(moderateSelections));

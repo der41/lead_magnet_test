@@ -125,24 +125,3 @@ export function buildPlanFitNarrative(
 
   return `${recommendation.plan.label} appears to be the strongest fit because it brings together ${categorySummary} in one plan, based on your selections and estimated operating complexity.`;
 }
-
-export function buildIncludedValueNarrative(
-  selections: CategorySelections,
-  recommendation: PlanRecommendation
-) {
-  const currentlyNotPaidFor = categoryOrder.filter(
-    (category) => selections[category] === "none"
-  );
-
-  if (currentlyNotPaidFor.length === 0) {
-    return `Because you already appear to pay for most front-desk categories today, the value here is less about adding tools and more about reducing overlap, context switching, and vendor sprawl inside a single ${recommendation.plan.label} setup.`;
-  }
-
-  const labels = currentlyNotPaidFor
-    .slice(0, 2)
-    .map((category) => categoryContent[category].title.toLowerCase());
-
-  return `You indicated that some capabilities are not currently paid for today, including ${labels.join(
-    " and "
-  )}. Since ${recommendation.plan.label} includes broader front-desk coverage, your comparison may understate the operational value of consolidation.`;
-}

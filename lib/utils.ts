@@ -20,10 +20,3 @@ export function formatCurrencyPerMonth(value: number) {
 export function formatCurrencyPerYear(value: number) {
   return `${formatCurrency(value)}/yr`;
 }
-
-export function titleCase(value: string) {
-  return value
-    .split(" ")
-    .map((part) => part[0].toUpperCase() + part.slice(1))
-    .join(" ");
-}
