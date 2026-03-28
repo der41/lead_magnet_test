@@ -1,0 +1,47 @@
+{
+    "breezyPlans": [
+      {
+        "key": "professional",
+        "label": "Professional",
+        "priceMonthly": 40,
+        "usersIncluded": 1,
+        "features": [
+          "Phone",
+          "SMS",
+          "Lead intake",
+          "Basic CRM",
+          "Scheduling"
+        ]
+      },
+      {
+        "key": "growth",
+        "label": "Growth",
+        "priceMonthly": 120,
+        "usersIncluded": 3,
+        "features": [
+          "Phone",
+          "SMS",
+          "Web chat",
+          "Campaigns / responses",
+          "Full CRM",
+          "Scheduling"
+        ]
+      },
+      {
+        "key": "accelerate",
+        "label": "Accelerate",
+        "priceMonthly": 600,
+        "usersIncluded": 10,
+        "features": [
+          "Phone",
+          "SMS",
+          "Web chat",
+          "Lifecycle drip / automation",
+          "Full CRM",
+          "Scheduling",
+          "CRM integrations",
+          "Done-for-you support"
+        ]
+      }
+    ]
+  }

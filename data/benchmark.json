@@ -1,0 +1,64 @@
+{
+    "benchmarkCategories": [
+      {
+        "key": "answering",
+        "label": "Answering / Reception",
+        "competitors": ["Ruby", "PATLive", "Smith.ai"],
+        "levels": {
+          "none": 0,
+          "low": 250,
+          "mid": 500,
+          "high": 1200
+        },
+        "notes": "Volume-sensitive benchmark for receptionist and answering coverage."
+      },
+      {
+        "key": "scheduling",
+        "label": "Scheduling",
+        "competitors": ["Calendly"],
+        "levels": {
+          "none": 0,
+          "low": 12,
+          "mid": 20,
+          "high": 40
+        },
+        "notes": "Per-seat style benchmark; high assumes richer scheduling or more than one user."
+      },
+      {
+        "key": "messaging",
+        "label": "Customer Messaging",
+        "competitors": ["Intercom", "Podium"],
+        "levels": {
+          "none": 0,
+          "low": 29,
+          "mid": 249,
+          "high": 599
+        },
+        "notes": "Mixed messaging, inbox, web chat, and customer communication benchmark."
+      },
+      {
+        "key": "crm_ops",
+        "label": "CRM / Operations",
+        "competitors": ["Jobber", "Keap", "GoHighLevel"],
+        "levels": {
+          "none": 0,
+          "low": 97,
+          "mid": 249,
+          "high": 529
+        },
+        "notes": "Covers customer management, workflows, and service operations tools."
+      },
+      {
+        "key": "website",
+        "label": "Website / Online Presence",
+        "competitors": ["Wix", "Squarespace"],
+        "levels": {
+          "none": 0,
+          "low": 17,
+          "mid": 29,
+          "high": 39
+        },
+        "notes": "Website platform benchmark for small service businesses."
+      }
+    ]
+  }
