@@ -1,5 +1,5 @@
 import { benchmarkCategories, breezyPlans, getBenchmarkCategory } from "@/lib/data";
-import { buildIncludedValueNarrative, buildPlanFitNarrative } from "@/lib/content";
+import { buildPlanFitNarrative } from "@/lib/content";
 import type {
   BreezyPlan,
   CategoryCosts,
@@ -190,7 +190,15 @@ export function recommendPlan(
 ): PlanRecommendation {
   let plan: BreezyPlan;
 
-  if (estimate.totals.monthly >= 700 || complexity.score >= 10) {
+  if (estimate.overridesApplied) {
+    if (estimate.totals.monthly >= 700) {
+      plan = breezyPlans.find((item) => item.key === "accelerate")!;
+    } else if (estimate.totals.monthly >= 180) {
+      plan = breezyPlans.find((item) => item.key === "growth")!;
+    } else {
+      plan = breezyPlans.find((item) => item.key === "professional")!;
+    }
+  } else if (estimate.totals.monthly >= 700 || complexity.score >= 10) {
     plan = breezyPlans.find((item) => item.key === "accelerate")!;
   } else if (estimate.totals.monthly >= 180 || complexity.score >= 5) {
     plan = breezyPlans.find((item) => item.key === "growth")!;
@@ -238,13 +246,6 @@ export function buildComparisonRows(
       difference: coverage.status
     };
   });
-}
-
-export function buildIncludedValueText(
-  selections: CategorySelections,
-  recommendation: PlanRecommendation
-) {
-  return buildIncludedValueNarrative(selections, recommendation);
 }
 
 export function buildLeadPayload(args: {

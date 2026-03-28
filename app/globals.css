@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6f7fb;
+  --background: #f8f9ff;
   --surface: #ffffff;
-  --surface-soft: #eef2ff;
-  --surface-strong: #e3ecff;
-  --foreground: #0f172a;
-  --muted: #5b6476;
-  --primary: #1750d8;
-  --primary-strong: #123da4;
-  --accent: #dff0ff;
-  --success: #0f8a52;
+  --surface-soft: #eff4ff;
+  --surface-strong: #dce9ff;
+  --foreground: #0b1c30;
+  --muted: #545f73;
+  --primary: #0057cd;
+  --primary-strong: #0d6efd;
+  --accent: #dce9ff;
+  --success: #006b1b;
   --warning: #b7791f;
-  --shadow: 0 24px 80px rgba(15, 23, 42, 0.09);
+  --shadow: 0 40px 80px rgba(11, 28, 48, 0.08);
 }
 
 * {
@@ -27,10 +27,11 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, rgba(23, 80, 216, 0.12), transparent 30%),
-    linear-gradient(180deg, #f8faff 0%, var(--background) 52%, #eef3fb 100%);
+    radial-gradient(circle at top right, rgba(211, 228, 254, 0.68), transparent 34%),
+    radial-gradient(circle at bottom left, rgba(177, 197, 255, 0.24), transparent 24%),
+    linear-gradient(180deg, #fbfcff 0%, var(--background) 54%, #eef4ff 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Inter, "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
 button,
@@ -41,5 +42,5 @@ select {
 }
 
 ::selection {
-  background: rgba(23, 80, 216, 0.18);
+  background: rgba(13, 110, 253, 0.18);
 }
