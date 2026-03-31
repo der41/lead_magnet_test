@@ -2,7 +2,7 @@
 
 ## Overview
 
-This app is a Next.js lead-magnet calculator for Breezy. It helps a user estimate what they currently spend across several front-desk service categories, compares that spend against a recommended Breezy plan, and then presents a gated report with a pricing comparison and service-level breakdown.
+This app is a Next.js lead-magnet calculator for Aerwyn. It helps a user estimate what they currently spend across several front-desk service categories, compares that spend against a recommended Aerwyn plan, and then presents a gated report with a pricing comparison and service-level breakdown.
 
 The current implementation is a guided multi-step flow with Stitch-inspired landing, intro, questionnaire, summary, teaser, lead-capture, and final report pages.
 
@@ -13,7 +13,7 @@ The current implementation is a guided multi-step flow with Stitch-inspired land
 The landing page introduces the calculator and explains the value proposition:
 
 - estimate current front-desk stack cost
-- compare against Breezy
+- compare against Aerwyn
 - identify overlap and possible savings
 
 The primary CTA starts the questionnaire flow.
@@ -60,9 +60,9 @@ Important behavior:
 Before the lead form, the app shows:
 
 - current estimated spend
-- recommended Breezy plan
+- recommended Aerwyn plan
 - estimated monthly savings
-- a pricing table with Breezy plan options
+- a pricing table with Aerwyn plan options
 
 The teaser pricing table includes linked plan CTAs.
 
@@ -84,9 +84,9 @@ After submission, the user sees a report page that includes:
 - monthly spend comparison
 - recommended plan explanation
 - category-by-category service table using actual breakdown values
-- optional `Breezy also includes:` section when one or more categories were entered as `$0`
+- optional `Aerwyn also includes:` section when one or more categories were entered as `$0`
 - admin-work and consolidation framing
-- pricing table with Breezy plans
+- pricing table with Aerwyn plans
 
 ## How Pricing and Recommendation Work
 
@@ -142,7 +142,7 @@ Override behavior:
 - `data/benchmark.json`
   Benchmark category pricing.
 - `data/plans.json`
-  Breezy plan pricing and features.
+  Aerwyn plan pricing and features.
 
 ## Current State
 

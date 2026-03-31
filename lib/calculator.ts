@@ -1,7 +1,6 @@
-import { benchmarkCategories, breezyPlans, getBenchmarkCategory } from "@/lib/data";
+import { benchmarkCategories, getBenchmarkCategory, servicePlans } from "@/lib/data";
 import { buildPlanFitNarrative } from "@/lib/content";
 import type {
-  BreezyPlan,
   CategoryCosts,
   CategoryKey,
   CategorySelections,
@@ -13,7 +12,8 @@ import type {
   LevelKey,
   LeadReportPayload,
   PlanKey,
-  PlanRecommendation
+  PlanRecommendation,
+  ServicePlan
 } from "@/types/calculator";
 import { formatCurrencyPerMonth } from "@/lib/utils";
 
@@ -188,22 +188,22 @@ export function recommendPlan(
   estimate: EstimateResult,
   complexity: ComplexityResult
 ): PlanRecommendation {
-  let plan: BreezyPlan;
+  let plan: ServicePlan;
 
   if (estimate.overridesApplied) {
     if (estimate.totals.monthly >= 700) {
-      plan = breezyPlans.find((item) => item.key === "accelerate")!;
+      plan = servicePlans.find((item) => item.key === "accelerate")!;
     } else if (estimate.totals.monthly >= 180) {
-      plan = breezyPlans.find((item) => item.key === "growth")!;
+      plan = servicePlans.find((item) => item.key === "growth")!;
     } else {
-      plan = breezyPlans.find((item) => item.key === "professional")!;
+      plan = servicePlans.find((item) => item.key === "professional")!;
     }
   } else if (estimate.totals.monthly >= 700 || complexity.score >= 10) {
-    plan = breezyPlans.find((item) => item.key === "accelerate")!;
+    plan = servicePlans.find((item) => item.key === "accelerate")!;
   } else if (estimate.totals.monthly >= 180 || complexity.score >= 5) {
-    plan = breezyPlans.find((item) => item.key === "growth")!;
+    plan = servicePlans.find((item) => item.key === "growth")!;
   } else {
-    plan = breezyPlans.find((item) => item.key === "professional")!;
+    plan = servicePlans.find((item) => item.key === "professional")!;
   }
 
   const savingsMonthly = Math.max(estimate.totals.monthly - plan.priceMonthly, 0);
@@ -242,7 +242,7 @@ export function buildComparisonRows(
       categoryKey: category.key,
       categoryLabel: category.label,
       estimatedCurrentSetup: currentDescription,
-      breezyCoverage: coverage.coverage,
+      planCoverage: coverage.coverage,
       difference: coverage.status
     };
   });
