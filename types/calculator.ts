@@ -34,7 +34,7 @@ export interface BenchmarkDataFile {
   benchmarkCategories: BenchmarkCategory[];
 }
 
-export interface BreezyPlan {
+export interface ServicePlan {
   key: PlanKey;
   label: string;
   priceMonthly: number;
@@ -43,7 +43,7 @@ export interface BreezyPlan {
 }
 
 export interface PlansDataFile {
-  breezyPlans: BreezyPlan[];
+  plans: ServicePlan[];
 }
 
 export interface CategorySelection {
@@ -81,7 +81,7 @@ export interface ComplexityResult {
 }
 
 export interface PlanRecommendation {
-  plan: BreezyPlan;
+  plan: ServicePlan;
   reason: string;
   savingsMonthly: number;
   savingsAnnual: number;
@@ -97,7 +97,7 @@ export interface ComparisonRow {
   categoryKey: CategoryKey;
   categoryLabel: string;
   estimatedCurrentSetup: string;
-  breezyCoverage: string;
+  planCoverage: string;
   difference: CoverageStatus;
 }
 

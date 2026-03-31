@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { brandConfig } from "@/lib/app-config";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Front Desk Stack Cost Calculator",
   description:
-    "Estimate your current front-desk stack costs, compare them with Breezy, and unlock a benchmark-based report."
+    `Estimate your current front-desk stack costs, compare them with ${brandConfig.name}, and unlock a benchmark-based report.`
 };
 
 export default function RootLayout({

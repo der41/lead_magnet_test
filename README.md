@@ -1,6 +1,6 @@
 # Front Desk Stack Cost Calculator
 
-A production-ready Next.js prototype for Breezy that estimates a service business's current front-desk stack cost, recommends a Breezy plan, and unlocks a premium comparison report.
+A production-ready Next.js prototype for Aerwyn that estimates a service business's current front-desk stack cost, recommends an Aerwyn plan, and unlocks a premium comparison report.
 
 ## Stack
 
@@ -41,7 +41,7 @@ npm run dev
 - `lib/`
   Business logic, data access, validation, submission abstraction, and formatting helpers.
 - `data/`
-  Source benchmark and Breezy plan JSON files.
+  Source benchmark and Aerwyn plan JSON files.
 - `types/`
   Shared TypeScript models for the calculator.
 - `tests/`
@@ -58,7 +58,7 @@ npm run dev
 
 - [`data/plans.json`](./data/plans.json)
   Imported by `lib/data.ts` and used by the calculator utilities for:
-  - Breezy plan pricing
+  - Aerwyn plan pricing
   - recommendation output
   - comparison/report content
 
